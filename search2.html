@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create a column layout with Flexbox */
+      .row {
+        display: flex;
+      }
+
+      /* Left column (menu) */
+      .left {
+        flex: 35%;
+        padding: 15px 0;
+      }
+
+      .left h2 {
+        padding-left: 8px;
+      }
+
+      /* Right column (page content) */
+      .right {
+        flex: 65%;
+        padding: 15px;
+      }
+
+      #gambar img {
+        width: 270px;
+      }
+
+      /* Style the search box */
+      #mySearch {
+        width: 100%;
+        font-size: 18px;
+        padding: 11px;
+        border: 1px solid #ddd;
+      }
+
+      /* Style the navigation menu inside the left column */
+      #myMenu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #myMenu p {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #myMenu li a {
+        padding: 12px;
+        text-decoration: none;
+        color: black;
+        display: block;
+      }
+
+      #myMenu li a:hover {
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Nama-nama tim EVOS Esport</h2>
+    <p>evos divine mendapatkan gelar juara 5 kali berturut-turut dan mereka mewakili indonesia di ajang tournamen FFWS di singapura 2022</p>
+
+    <div class="row">
+      <div class="left" style="background-color: whitesmoke">
+        <h2>nama player</h2>
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search" title="Type in a category" />
+        <ul id="myMenu">
+          <li onclick="mr05()"><a href="#">EVOS Mr05</a></li>
+          <li onclick="abu()"><a href="#">EVOS ABU</a></li>
+          <li onclick="bion()"><a href="#">EVOS BION</a></li>
+          <li onclick="street()"><a href="#">EVOS STREET</a></li>
+          <li onclick="abaxx()"><a href="#">EVOS ABAXX</a></li>
+          <li onclick="kenzo()"><a href="#">EVOS KENZO</a></li>
+          <li onclick="rasyah()"><a href="#">EVOS Rasyah</a></li>
+
+          <p id="myP">tidak ada pencarian lain</p>
+        </ul>
+      </div>
+
+      <div class="right" style="background-color: #ddd">
+        <div id="gambar"></div>
+        <h2 id="title"></h2>
+        <p id="subtitle"></p>
+        <p id="note"></p>
+      </div>
+    </div>
+
+    <script>
+      p = document.getElementById('myP');
+      p.style.display = 'none';
+      function myFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('mySearch');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById('myMenu');
+        li = ul.getElementsByTagName('li');
+        p = document.getElementById('myP');
+
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName('a')[0];
+
+          if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = '';
+            p.style.display = 'none';
+          } else {
+            li[i].style.display = 'none';
+            p.style.display = '';
+          }
+        }
+      }
+
+      function mr05() {
+        document.getElementById('gambar').innerHTML = '<img src="EVOS Mr05.png">';
+        document.getElementById('title').innerHTML = 'EVOS MR05';
+        document.getElementById('subtitle').innerHTML = 'Skill EVOS Mr05 sebagai rusher memang sudah tidak diragukan';
+        document.getElementById('note').innerHTML = 'Mr05 pernah mengharumkan nama Indonesia menjadi juara dunia Free Fire di Free Fire World Cup (FFWC) 2019 yang digelar di Thailand.';
+      }
+      function abu() {
+        document.getElementById('gambar').innerHTML = '<img src="EVOS Abu.png">';
+        document.getElementById('title').innerHTML = 'EVOS ABU';
+        document.getElementById('subtitle').innerHTML = 'Ia adalah salah satu pro player andalan EVOS Divine yang sudah pernah menorehkan berbagai prestasi';
+        document.getElementById('note').innerHTML = 'Kini, EVOS Abu sedang beristirahat dari skema kompetitif karena sedang sakit,Ia juga tidak ikut bertanding di FFIM Fall 2021.';
+      }
+      function bion() {
+        document.getElementById('gambar').innerHTML = '<img src="EVOS Bion.png">';
+        document.getElementById('title').innerHTML = 'EVOS BION';
+        document.getElementById('subtitle').innerHTML = 'Evos Bion seorang rusher adalah  pemain baru evos Divine';
+        document.getElementById('note').innerHTML = ' kemarin tepat tanggal 5 Desember 2021 dirinya resmi tergabung menjadi bagian dari tim Evos.';
+      }
+      function street() {
+        document.getElementById('gambar').innerHTML = '<img src="EVOS Street.png">';
+        document.getElementById('title').innerHTML = 'EVOS STREET';
+        document.getElementById('subtitle').innerHTML = 'dengan seorang support yang sangat bagus evos divine,';
+        document.getElementById('note').innerHTML = 'evos street sangat gigih dalam  mensupport tim nya tentunya kepada mr05 dengan seorang rusher terkuat saat ini.';
+      }
+      function abaxx() {
+        document.getElementById('gambar').innerHTML = '<img src="EVOS Abaxx.png">';
+        document.getElementById('title').innerHTML = 'EVOS ABAXX';
+        document.getElementById('subtitle').innerHTML = 'Evos abaxx seorang support,abaxx adalah pemain baru evos divine';
+        document.getElementById('note').innerHTML = 'kemarin tepat tanggal 10 desember 2021 dirinya resmi bergabung menjadi bagian dari tim evos.';
+      }
+      function kenzo() {
+        document.getElementById('gambar').innerHTML = '<img src="EVOS kenzo.png">';
+        document.getElementById('title').innerHTML = 'EVOS KENZO';
+        document.getElementById('subtitle').innerHTML = 'Kenzoo adalah sosok pro player inspiratif,';
+        document.getElementById('note').innerHTML = 'Sebelum sukses seperti sekarang, EVOS Kenzoo sudah melewati proses kerja keras yang cukup panjang. Tidak sia-sia, kini Kenzoo sudah meraih banyak prestasi bersama timnya, EVOS Divine.';
+      }
+      function rasyah() {
+        document.getElementById('gambar').innerHTML = '<img src="Evos Rasyah.png">';
+        document.getElementById('title').innerHTML = 'EVOS Rasyah';
+        document.getElementById('subtitle').innerHTML = 'Perlu diketahui nama asli Evos Rasyah pro player tim Evos Imortal adalah Rasyah Rasyid atau yang lebih dikenal dengan Rasyah,';
+        document.getElementById('note').innerHTML = 'Gamer kelahiran tahun 2009 ini sangat jago bermain Free Fire sehingga ia mampu bergabung dengan tim EVOS Immortal, tim baru bentukan grup esports EVOS untuk berlaga di turnamen Free Fire Master League (FFML) Season IV.';
+      }
+    </script>
+  </body>
+</html>
